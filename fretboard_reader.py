@@ -5,9 +5,9 @@ class FretboardReader:
 
 	def generate_notes(self, fretboard_values):
 		#fretboard_values = ["3","2","0","0","3","3"]
-		result_array = []
+		chord_notes = []
 		if len(fretboard_values) < len(self.standard_tuning): 
-			return result_array
+			return chord_notes
 			#returns empty array if you give a duff input
 
 		for index, fret_number in enumerate(fretboard_values):
@@ -17,9 +17,9 @@ class FretboardReader:
 			#loops through and gets the index if each fretted value to then look up the appropriate open note in the standard tuning array
 			note = self.find_note(fret_number, standard_tuning_note)
 			#some weird crazy wizard magic happens here to get the right note
-			result_array.append(note)
+			chord_notes.append(note)
 
-		return result_array
+		return chord_notes
 
 	#finds the appropriate note in the notes array given the index provided by the fretted note
 	def find_note(self, fretboard_position, open_note):
@@ -53,4 +53,10 @@ class FretboardReader:
 		return fretted_note_index - multiplier
 		#12 - 12 = 0
 
-	#def remove_duplicate_notes(self, )
+	#We have to do this manually because the set() function is stupid and reorders things
+	def remove_duplicate_notes(self, chord_notes):
+		unique_notes = []
+		for note in chord_notes:
+			if note not in unique_notes:
+				unique_notes.append(note)
+		return unique_notes
