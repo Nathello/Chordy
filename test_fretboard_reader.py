@@ -33,10 +33,10 @@ class TestFretboardReader(unittest.TestCase):
 		result = self.reader.generate_notes(stupid_array)
 		self.assertEquals(result, [])
 
-	def test_removes_duplicate_notes(self):
-		stupid_array = ["1","X","X","X","X","1"]
-		result = self.reader.generate_notes(stupid_array)
-		self.assertEquals(result, ["F"])
+	# def test_removes_duplicate_notes(self):
+	# 	stupid_array = ["1","X","X","X","X","1"]
+	# 	result = self.reader.generate_notes(stupid_array)
+	# 	self.assertEquals(result, ["F"])
 
 	def test_fretted_note_index_returns_correct_index__0(self):
 		result = self.reader.fretted_note_index("0", "E")
@@ -57,6 +57,10 @@ class TestFretboardReader(unittest.TestCase):
 	def test_valid_note_index_last_item_plus_5(self):
 		result = self.reader.valid_note_index(16)
 		self.assertEquals(result,4)
+
+	def test_valid_note_index_last_item_plus_15(self):
+		result = self.reader.valid_note_index(26)
+		self.assertEquals(result,2)
 
 	def test_valid_note_index_last_item_plus_15(self):
 		result = self.reader.valid_note_index(26)
