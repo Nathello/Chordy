@@ -4,15 +4,18 @@ class FretboardReader:
 		self.notes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"]
 
 	def generate_notes(self, fretboard_values):
+		#fretboard_values = ["x","3","2","0","1","0"]
 		result_array = []
-		if len(fretboard_values) < len(self.standard_tuning):
+		if len(fretboard_values) < len(self.standard_tuning): 
 			return result_array
+			#returns empty array if you give a duff input
 
-		for index, value in enumerate(self.standard_tuning):
-			tuning_result = fretboard_values[index].lower()
-			if tuning_result == "x":
+		for index, fret_number in enumerate(fretboard_values):
+			if fret_number.lower() == "x":
 				continue
-			note = self.find_note(tuning_result, value)
+			standard_tuning_note = self.standard_tuning[index]
+			note = self.find_note(fret_number, standard_tuning_note)
+			#First value to be passed in here is "3"
 			result_array.append(note)
 
 		return result_array
@@ -38,3 +41,5 @@ class FretboardReader:
 		multiplier = overflow_times * number_of_notes
 
 		return fretted_note_index - multiplier
+
+	#def remove_duplicate_notes(self, )
