@@ -19,7 +19,9 @@ class FretboardReader:
 			#some weird crazy wizard magic happens here to get the right note
 			chord_notes.append(note)
 
-		return chord_notes
+		unique_notes = self.remove_duplicate_notes(chord_notes)
+
+		return unique_notes
 
 	#finds the appropriate note in the notes array given the index provided by the fretted note
 	def find_note(self, fretboard_position, open_note):

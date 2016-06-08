@@ -65,3 +65,15 @@ class TestFretboardReader(unittest.TestCase):
 	def test_valid_note_index_last_item_plus_15(self):
 		result = self.reader.valid_note_index(26)
 		self.assertEquals(result,2)
+
+	def test_this_shit_actually_works__simple(self):
+		result = self.reader.generate_notes(["3","2","0","0","3","3"])
+		self.assertEquals(result,["G","B","D"])
+
+	def test_this_shit_actually_works__muted_notes(self):
+		result = self.reader.generate_notes(["X","3","2","0","1","0"])
+		self.assertEquals(result,["C","E","G"])
+
+	def test_this_shit_actually_works__muted_notes(self):
+		result = self.reader.generate_notes(["X","15","17","17","0","0"])
+		self.assertEquals(result,["C","G","B","E"])
