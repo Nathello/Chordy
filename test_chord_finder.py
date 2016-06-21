@@ -19,3 +19,8 @@ class TestChordFinder(unittest.TestCase):
 		chord_array = ["C"]
 		result = self.chord_finder.find_chord(chord_array)
 		self.assertEquals(result, "C")
+
+	def test_index_of_root_note(self):
+		chord_notes = ["C","E","G"]
+		result = self.chord_finder.root_note_index(chord_notes)
+		self.assertEquals(result, 3)
