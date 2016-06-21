@@ -6,7 +6,8 @@ import unittest
 class TestFretboardReader(unittest.TestCase):
 
 	def setUp(self):
-		self.reader = FretboardReader(["E","A","D","G","B","E"], NoteLookup())
+		note_lookup = NoteLookup()
+		self.reader = FretboardReader(["E","A","D","G","B","E"], note_lookup)
 
 	def test_init(self):
 	  self.assertIsNotNone(self.reader)

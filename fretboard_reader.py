@@ -1,7 +1,7 @@
 class FretboardReader:
 	def __init__(self, tuning, note_lookup):
 		self.tuning = tuning
-		self.notes = note_lookup.note_list()
+		self.notes = note_lookup.notes
 
 	def generate_notes(self, fretboard_values):
 		#fretboard_values = ["3","2","0","0","3","3"]
