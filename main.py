@@ -2,7 +2,7 @@ from fretboard_reader import FretboardReader
 
 class Main:
   def __init__(self):
-    reader = FretboardReader()
+    reader = FretboardReader(["E","A","D","G","B","E"])
     fretboard_input = raw_input("Gimme yo damn fretboard positions biatch: ")
 
     while fretboard_input != "q":

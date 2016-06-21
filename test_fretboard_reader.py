@@ -5,13 +5,13 @@ import unittest
 class TestFretboardReader(unittest.TestCase):
 
 	def setUp(self):
-		self.reader = FretboardReader()
+		self.reader = FretboardReader(["E","A","D","G","B","E"])
 
 	def test_init(self):
-	    self.assertIsNotNone(self.reader)
+	  self.assertIsNotNone(self.reader)
 
 	def test_standard_tuning(self):
-		result = self.reader.standard_tuning
+		result = self.reader.tuning
 		self.assertEquals(result, ["E","A","D","G","B","E"])
 
 	def test_notes(self):

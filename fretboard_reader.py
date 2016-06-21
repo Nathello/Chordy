@@ -1,19 +1,19 @@
 class FretboardReader:
-	def __init__(self):
-		self.standard_tuning = ["E","A","D","G","B","E"]
+	def __init__(self, tuning):
+		self.tuning = tuning
 		self.notes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"]
 
 	def generate_notes(self, fretboard_values):
 		#fretboard_values = ["3","2","0","0","3","3"]
 		chord_notes = []
-		if len(fretboard_values) < len(self.standard_tuning): 
+		if len(fretboard_values) < len(self.tuning): 
 			return chord_notes
 			#returns empty array if you give a duff input
 
 		for index, fret_number in enumerate(fretboard_values):
 			if fret_number.lower() == "x":
 				continue
-			standard_tuning_note = self.standard_tuning[index]
+			standard_tuning_note = self.tuning[index]
 			#loops through and gets the index if each fretted value to then look up the appropriate open note in the standard tuning array
 			note = self.find_note(fret_number, standard_tuning_note)
 			#some weird crazy wizard magic happens here to get the right note
