@@ -22,8 +22,7 @@ class ChordFinder:
     #create an empty chord array to hold results with zero as the start point (as this represents the root note)
     chord_array = []
     for note in chord_notes:
-      note_index = self.note_lookup.note_index(note)
-      note_interval = note_index - root_note_index
+      note_interval = self.note_lookup.note_interval(root_note_index, note)
       chord_array.append(note_interval)
     return chord_array
 
