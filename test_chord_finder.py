@@ -30,3 +30,9 @@ class TestChordFinder(unittest.TestCase):
 		root_note_index = 3
 		result = self.chord_finder.note_intervals(chord_notes,root_note_index)
 		self.assertEquals(result,[0,4,7])
+
+	def test_note_intervals_looping(self):
+		chord_notes = ["G","B","D"]
+		root_note_index = 10
+		result = self.chord_finder.note_intervals(chord_notes,root_note_index)
+		self.assertEquals(result,[0,4,7])
