@@ -11,8 +11,7 @@ class FretboardReader:
 			#returns empty array if you give a duff input
 
 		for index, fret_number in enumerate(fretboard_values):
-			if fret_number.lower() == "x":
-				continue
+			if fret_number.lower() == "x": continue
 			standard_tuning_note = self.tuning[index]
 			#loops through and gets the index if each fretted value to then look up the appropriate open note in the standard tuning array
 			note = self.find_note(fret_number, standard_tuning_note)
@@ -44,8 +43,7 @@ class FretboardReader:
 	def valid_note_index(self, fretted_note_index):
 		number_of_notes = len(self.notes)
 		#Checking to see if we need to loop back on the array of notes (i.e. if we are counting 4 spaces from G we get B)
-		if fretted_note_index < number_of_notes - 1:
-			return fretted_note_index
+		if fretted_note_index < number_of_notes - 1: return fretted_note_index
 		#Fretted note index for A = 0 but also 12 (as we have 12 notes in our scale)
 		overflow_times = int(fretted_note_index / number_of_notes)
 		#G as 21 becomes 12/12 = 1, rounded
@@ -59,6 +57,5 @@ class FretboardReader:
 	def remove_duplicate_notes(self, chord_notes):
 		unique_notes = []
 		for note in chord_notes:
-			if note not in unique_notes:
-				unique_notes.append(note)
+			if note not in unique_notes: unique_notes.append(note)
 		return unique_notes

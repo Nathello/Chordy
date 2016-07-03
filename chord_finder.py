@@ -5,8 +5,7 @@ class ChordFinder:
   def find_chord(self, chord_notes):
     #chord_notes = ["C","E","G"]
     #If it's one note then just return the note name
-    if len(chord_notes) == 1:
-      return chord_notes[0]
+    if len(chord_notes) == 1: return chord_notes[0]
 
     #find the root note in the notes array and return its index in the list of notes
     root_note_index = root_note_index(chord_notes)
