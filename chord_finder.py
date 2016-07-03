@@ -14,7 +14,7 @@ class ChordFinder:
   def root_note_index(self,chord_notes):
     root_note = chord_notes[0]
     return self.notes.index(root_note)
-    
+
     #create an empty chord array to hold results with zero as the start point (as this represents the root note)
     #for every other note loop and get its index in the notes array
     #subtract the index of the root note from it

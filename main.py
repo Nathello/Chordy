@@ -4,13 +4,17 @@ from note_lookup import NoteLookup
 class Main:
   def __init__(self):
     reader = FretboardReader(["E","A","D","G","B","E"], NoteLookup())
-    fretboard_input = raw_input("Gimme yo damn fretboard positions biatch: ")
+    input_message = "Enter fretboard positions (0-6, X): "
+    quit_key = "q"
+    divider = " "
 
-    while fretboard_input != "q":
+    fretboard_input = raw_input(input_message)
 
-      array = fretboard_input.split(" ")
+    while fretboard_input != quit_key:
+
+      array = fretboard_input.split(divider)
       print reader.generate_notes(array)
-      fretboard_input = raw_input("Gimme yo damn fretboard positions biatch: ")
+      fretboard_input = raw_input(input_message)
 
     print "see ya later pal"
 
