@@ -1,9 +1,9 @@
 from fretboard_reader import FretboardReader
-from note_lookup import NoteLookup
+from chordy import Chordy
 
 class Main:
   def __init__(self):
-    reader = FretboardReader(["E","A","D","G","B","E"], NoteLookup())
+    chordy = Chordy()
     input_message = "Enter fretboard positions (0-6, X): "
     quit_key = "q"
     divider = " "
@@ -13,7 +13,7 @@ class Main:
     while fretboard_input != quit_key:
 
       array = fretboard_input.split(divider)
-      print reader.generate_notes(array)
+      print chordy.run(array)
       fretboard_input = raw_input(input_message)
 
     print "see ya later pal"
