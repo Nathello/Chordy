@@ -37,6 +37,12 @@ class TestChordFinder(unittest.TestCase):
 		result = self.chord_finder.note_intervals(chord_notes,root_note_index)
 		self.assertEquals(result,[0,4,7])
 
+	def test_note_intervals_looping_A_minor(self):
+		chord_notes = ["A","E","C"]
+		root_note_index = 0
+		result = self.chord_finder.note_intervals(chord_notes,root_note_index)
+		self.assertEquals(result,[0,3,7])
+
 	def test_note_intervals_weird_chord(self):
 			chord_notes = ["F#","A","D#"]
 			root_note_index = 9

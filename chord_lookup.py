@@ -15,4 +15,6 @@ class ChordLookup:
   def find_chord(self, intervals_array, root_note):
     result = root_note + " "
     key = self.convert_to_key(intervals_array)
-    return result + self.chord_dictionary[key]
+    chord = self.chord_dictionary.get(key)
+    if(chord == None): return "I wanna see some naked dduuuuuuudes, that's why I built this pooooool"
+    return result + chord
