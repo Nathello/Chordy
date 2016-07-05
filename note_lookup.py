@@ -32,4 +32,4 @@ class NoteLookup:
       if note_to_find == current_note: return True
       self.interval += 1
       self.current_location += 1
-    return false;
+    return False;
