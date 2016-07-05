@@ -1,6 +1,6 @@
 class ChordLookup:
   def __init__(self):
-    chord_dictionary = {
+    self.chord_dictionary = {
       "0-4-7":"Major",
       "0-3-7":"Minor",
       "0-4-7-11":"Major Seventh",
@@ -11,3 +11,8 @@ class ChordLookup:
 
   def convert_to_key(self, intervals_array):
     return "-".join(str(interval) for interval in intervals_array)
+
+  def find_chord(self, intervals_array, root_note):
+    result = root_note + " "
+    key = self.convert_to_key(intervals_array)
+    return result + self.chord_dictionary[key]
