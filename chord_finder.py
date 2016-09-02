@@ -23,7 +23,8 @@ class ChordFinder:
     for note in chord_notes:
       note_interval = self.note_lookup.note_interval(root_note_index, note)
       chord_array.append(note_interval)
-    return sorted(chord_array)
+    chord_array_as_ints = map(int, chord_array)
+    return sorted(chord_array_as_ints)
 
 
     #for every other note loop and get its index in the notes array
