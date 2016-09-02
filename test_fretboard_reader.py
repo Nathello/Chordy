@@ -79,3 +79,7 @@ class TestFretboardReader(unittest.TestCase):
 	def test_this_shit_actually_works__muted_notes(self):
 		result = self.reader.generate_notes(["X","15","17","17","0","0"])
 		self.assertEquals(result,["C","G","B","E"])
+
+		def test_this_shit_actually_works__bug(self):
+			result = self.reader.generate_notes(["X","2","1","2","0","2"])
+			self.assertEquals(result,["B","D#","A","F#"])

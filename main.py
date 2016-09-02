@@ -4,6 +4,7 @@ from chordy import Chordy
 class Main:
   def __init__(self):
     chordy = Chordy()
+    
     input_message = "Enter fretboard positions (0-6, X): "
     quit_key = "q"
     divider = " "
